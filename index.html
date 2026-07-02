@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Grupo Innova – Mantenimiento de Espacios Verdes</title>
+  <link rel="icon" type="image/png" href="IMG_5646.PNG" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,14 +32,17 @@
       <img src="IMG_5646.PNG" alt="Grupo Innova" class="logo-img" />
     </a>
     <nav class="nav-links" id="navLinks">
-      <a href="#nosotros">Nosotros</a>
-      <a href="#servicios">Servicios</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#equipo">Equipo</a>
-      <a href="#contacto">Contacto</a>
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="portfolio.html">Proyectos</a>
+      <a href="contacto.html">Contacto</a>
     </nav>
     <div class="nav-right">
-      <a href="#" aria-label="Instagram" class="nav-insta">
+      <a href="https://www.facebook.com/GRUPOINNOVASRL" target="_blank" rel="noopener" aria-label="Facebook" class="nav-insta">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/grupoinnova_sj/" target="_blank" rel="noopener" aria-label="Instagram" class="nav-insta">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
         </svg>
@@ -70,9 +74,9 @@
     <h1 class="hero-heading">Grupo Innova.</h1>
     <p class="hero-desc">Realizamos obras viales, soluciones integrales y especializadas de mantenimiento, plomería y gas, junto con servicios para el sector público y privado.</p>
     <div class="hero-btns">
-      <a href="#servicios" class="btn btn-hero-pill">Innova Servicios</a>
-      <a href="#proyectos" class="btn btn-hero-pill">Innova Construcción</a>
-      <a href="#contacto" class="btn btn-hero-pill">Innova Ingeniería</a>
+      <button class="btn btn-hero-pill" onclick="setHeroUnit(this, 'logos/logos/espacios verdes.PNG', 'Innova Espacios Verdes')">Innova Espacios Verdes</button>
+      <button class="btn btn-hero-pill" onclick="setHeroUnit(this, 'logos/logos/construccion.PNG', 'Innova Construcción')">Innova Construcción</button>
+      <button class="btn btn-hero-pill" onclick="setHeroUnit(this, 'logos/logos/ingieneria.PNG', 'Innova Ingeniería')">Innova Ingeniería</button>
     </div>
   </div>
 </section>
@@ -93,7 +97,6 @@
       </div>
       <h3>Sobre Innova</h3>
       <p>Somos el grupo en el cual encontrarás un equipo altamente comprometido en el mantenimiento y cuidado de tus espacios verdes.</p>
-      <a href="#nosotros" class="btn btn-sm">Ver más</a>
     </div>
     <div class="card-intro featured">
       <div class="card-icon">
@@ -101,7 +104,6 @@
       </div>
       <h3>Nuestros Servicios</h3>
       <p>Ofrecemos servicios integrales y especializados de mantenimiento, poda, siembra y atención para todos los espacios verdes.</p>
-      <a href="#servicios" class="btn btn-sm">Ver más</a>
     </div>
     <div class="card-intro">
       <div class="card-icon">
@@ -109,7 +111,6 @@
       </div>
       <h3>Nuestro Portfolio</h3>
       <p>Conocé los proyectos finalizados y certificados que hemos desarrollado a lo largo de nuestra trayectoria.</p>
-      <a href="#proyectos" class="btn btn-sm">Ver más</a>
     </div>
   </div>
 </section>
@@ -162,7 +163,7 @@
       <button class="gal-arrow gal-next">&#8250;</button>
     </div>
     <div style="text-align:center;margin-top:1.5rem">
-      <a href="#contacto" class="btn btn-primary">Ver Portfolio</a>
+      <a href="portfolio.html" class="btn btn-primary">Ver Portfolio</a>
     </div>
   </div>
 </section>
@@ -214,19 +215,6 @@
 <!-- ===================== EQUIPO ===================== -->
 <section class="equipo section" id="equipo">
   <div class="container">
-    <div class="section-header">
-      <h2>¡Conoce nuestro gran equipo!</h2>
-      <div class="section-line"></div>
-    </div>
-
-    <!-- Foto grupal -->
-    <div class="equipo-banner">
-      <img src="fotoequipo.png" alt="Equipo completo Grupo Innova" />
-      <div class="equipo-banner-overlay">
-        <span>+15 profesionales comprometidos con cada proyecto</span>
-      </div>
-    </div>
-
     <!-- Columnas de texto -->
     <div class="equipo-text-cols" style="margin-top:3rem">
       <div class="equipo-col">
@@ -241,37 +229,6 @@
       </div>
     </div>
 
-    <!-- Cards de integrantes -->
-    <div class="equipo-cards-grid" style="margin-top:2.5rem">
-      <div class="equipo-member">
-        <div class="equipo-member-photo">
-          <img src="foto4.png" alt="Federico Rufino" />
-        </div>
-        <h4>Federico Rufino</h4>
-        <p>Director General del Grupo</p>
-      </div>
-      <div class="equipo-member">
-        <div class="equipo-member-photo">
-          <img src="foto1.png" alt="Operario" />
-        </div>
-        <h4>Nuestros Operarios</h4>
-        <p>Especialistas en mantenimiento y espacios verdes</p>
-      </div>
-      <div class="equipo-member">
-        <div class="equipo-member-photo">
-          <img src="foto2.jpeg" alt="Técnico" />
-        </div>
-        <h4>Equipo Técnico</h4>
-        <p>Expertos en maquinaria y sistemas de riego</p>
-      </div>
-      <div class="equipo-member">
-        <div class="equipo-member-photo">
-          <img src="foto3.png" alt="Obras civiles" />
-        </div>
-        <h4>Obras Civiles</h4>
-        <p>Especialistas en construcción y mantenimiento edilicio</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -324,7 +281,7 @@
             Tecnología de punta para espacios verdes profesionales
           </li>
         </ul>
-        <a href="#contacto" class="btn btn-primary" style="margin-top:1.4rem">Consultanos sobre este servicio</a>
+        <a href="contacto.html" class="btn btn-primary" style="margin-top:1.4rem">Consultanos sobre este servicio</a>
       </div>
 
       <div class="novedad-galeria">
@@ -351,25 +308,25 @@
       <div class="section-line"></div>
     </div>
     <div class="unidades-grid">
-      <div class="unidad-img">
-        <img src="foto2.jpeg" alt="Unidades de negocio Grupo Innova" />
+      <div class="unidad-logo-display">
+        <img src="logos/logos/espacios verdes.PNG" id="unidadLogo" alt="Innova Espacios Verdes" />
       </div>
       <div class="unidades-list">
-        <div class="unidad-item">
+        <div class="unidad-item highlight" onclick="setUnidad(this, 'logos/logos/espacios verdes.PNG')">
           <span class="unidad-num">01</span>
           <div>
-            <h4>Innova Servicios</h4>
+            <h4>Innova Espacios Verdes</h4>
             <p>Brindamos soluciones integrales de mantenimiento a todo tipo de empresa que lo necesite.</p>
           </div>
         </div>
-        <div class="unidad-item">
+        <div class="unidad-item" onclick="setUnidad(this, 'logos/logos/construccion.PNG')">
           <span class="unidad-num">02</span>
           <div>
             <h4>Innova Construcción</h4>
             <p>Nos encargamos de la construcción y administración de obras civiles y proyectos edilicios.</p>
           </div>
         </div>
-        <div class="unidad-item highlight">
+        <div class="unidad-item" onclick="setUnidad(this, 'logos/logos/ingieneria.PNG')">
           <span class="unidad-num">03</span>
           <div>
             <h4>Innova Ingeniería</h4>
@@ -381,29 +338,6 @@
   </div>
 </section>
 
-<!-- ===================== CONTACTO ===================== -->
-<section class="contacto section" id="contacto">
-  <div class="container contacto-inner">
-    <div class="contacto-box">
-      <h2>¡Contactanos!</h2>
-      <p class="contacto-phone">+54 9 2645 79-9789</p>
-      <p class="contacto-email">contacto@grupoinnova.com.ar</p>
-      <a href="https://wa.me/5492645799789" target="_blank" class="btn btn-whatsapp">
-        <span class="wa-icon">💬</span> Dejanos un mensaje
-      </a>
-    </div>
-    <div class="contacto-form-box">
-      <h3>Envianos tu consulta</h3>
-      <form class="contacto-form" id="contactoForm">
-        <input type="text" name="nombre" placeholder="Tu nombre" required />
-        <input type="email" name="email" placeholder="Tu email" required />
-        <input type="tel" name="telefono" placeholder="Teléfono (opcional)" />
-        <textarea name="mensaje" placeholder="Tu mensaje" rows="4" required></textarea>
-        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-      </form>
-    </div>
-  </div>
-</section>
 
 <!-- ===================== TRABAJA CON NOSOTROS ===================== -->
 <section class="trabaja">
@@ -431,11 +365,11 @@
   <div class="container redes-inner">
     <h3>¡Seguinos en las redes!</h3>
     <div class="redes-icons">
-      <a href="#" aria-label="Facebook" class="red-icon">
-        <svg viewBox="0 0 24 24" width="28" height="28"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      <a href="https://www.facebook.com/GRUPOINNOVASRL" target="_blank" rel="noopener" aria-label="Facebook" class="red-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
       </a>
-      <a href="#" aria-label="Instagram" class="red-icon">
-        <svg viewBox="0 0 24 24" width="28" height="28"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      <a href="https://www.instagram.com/grupoinnova_sj/" target="_blank" rel="noopener" aria-label="Instagram" class="red-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       </a>
     </div>
   </div>

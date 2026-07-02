@@ -120,26 +120,31 @@ a { text-decoration: none; color: inherit; }
 /* Nav links */
 .nav-links { display: flex; gap: 1.8rem; }
 .nav-links a {
-  color: var(--dark);
+  color: rgba(255,255,255,.92);
   font-family: 'Inter', system-ui, sans-serif;
   font-size: .85rem;
   font-weight: 600;
   letter-spacing: .02em;
   transition: color .2s;
 }
+.navbar.scrolled .nav-links a { color: var(--dark); }
+.navbar.scrolled .nav-links a:hover { color: var(--cyan); }
 .nav-links a:hover { color: var(--cyan); }
 
 /* Nav right: instagram + hamburger */
 .nav-right { display: flex; align-items: center; gap: 1rem; }
 .nav-insta {
-  color: var(--dark);
+  color: rgba(255,255,255,.85);
   display: flex; align-items: center;
   transition: color .2s;
 }
-.nav-insta:hover { color: var(--cyan); }
+.nav-insta:hover { color: #fff; }
+.navbar.scrolled .nav-insta { color: var(--dark); }
+.navbar.scrolled .nav-insta:hover { color: var(--cyan); }
 
 .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-.hamburger span { display: block; width: 24px; height: 2px; background: var(--dark); border-radius: 2px; transition: all .3s; }
+.hamburger span { display: block; width: 24px; height: 2px; background: rgba(255,255,255,.9); border-radius: 2px; transition: all .3s; }
+.navbar.scrolled .hamburger span { background: var(--dark); }
 
 /* ========================================
    HERO – gradiente claro estilo minimal
@@ -149,12 +154,9 @@ a { text-decoration: none; color: inherit; }
   display: flex;
   align-items: center;
   padding-top: 80px;
-  background: linear-gradient(150deg,
-    #b8d0e0 0%,
-    #ccdee8 20%,
-    #dce9f2 45%,
-    #edf3f8 70%,
-    #f5f8fb 100%);
+  background:
+    linear-gradient(to right, rgba(0,0,0,.62) 0%, rgba(0,0,0,.35) 100%),
+    url('proyectos/circunvalacion/IMG_4063.JPG') center/cover no-repeat;
 }
 
 .hero-content {
@@ -175,21 +177,21 @@ a { text-decoration: none; color: inherit; }
   font-family: 'Inter', system-ui, sans-serif;
   font-size: .8rem;
   font-weight: 600;
-  color: var(--gray);
-  background: rgba(255,255,255,.55);
-  border: 1px solid rgba(0,0,0,.1);
+  color: rgba(255,255,255,.9);
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
   border-radius: 99px;
   padding: .35rem .9rem;
   backdrop-filter: blur(6px);
 }
-.hero-pill svg { opacity: .65; flex-shrink: 0; }
+.hero-pill svg { opacity: .8; flex-shrink: 0; }
 
 /* Heading grande */
 .hero-heading {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: clamp(2.6rem, 6.5vw, 4.8rem);
   font-weight: 700;
-  color: var(--dark);
+  color: #fff;
   line-height: 1.08;
   margin-bottom: 1.4rem;
   letter-spacing: -.025em;
@@ -198,10 +200,24 @@ a { text-decoration: none; color: inherit; }
 /* Descripción */
 .hero-desc {
   font-size: 1.05rem;
-  color: var(--gray);
+  color: rgba(255,255,255,.8);
   max-width: 600px;
   line-height: 1.75;
   margin-bottom: 2.2rem;
+}
+
+/* Logo unidad en hero */
+.hero-unit-logo {
+  margin-bottom: 1.8rem;
+  height: 72px;
+  display: flex;
+  align-items: center;
+}
+.hero-unit-logo img {
+  height: 72px;
+  max-width: 220px;
+  object-fit: contain;
+  transition: opacity .2s ease;
 }
 
 /* Botones pill outline */
@@ -210,15 +226,20 @@ a { text-decoration: none; color: inherit; }
   display: inline-block;
   padding: .65rem 1.6rem;
   border-radius: 99px;
-  border: 1.5px solid rgba(34,40,49,.3);
+  border: 1.5px solid rgba(255,255,255,.4);
   font-family: 'Inter', system-ui, sans-serif;
   font-size: .88rem;
   font-weight: 600;
-  color: var(--dark);
-  background: rgba(255,255,255,.5);
+  color: #fff;
+  background: rgba(255,255,255,.15);
   backdrop-filter: blur(4px);
   transition: all .22s;
   cursor: pointer;
+  appearance: none;
+}
+.btn-hero-pill.active {
+  background: rgba(255,255,255,.35);
+  border-color: rgba(255,255,255,.8);
 }
 .btn-hero-pill:hover {
   background: var(--cyan);
@@ -507,21 +528,27 @@ a { text-decoration: none; color: inherit; }
 /* ========================================
    STATS
    ======================================== */
-.stats { background: var(--cyan); padding: 56px 0; }
+.stats { background: var(--dark); padding: 64px 0; }
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   text-align: center;
 }
-.stat-item { color: var(--white); }
+.stat-item {
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-left: 1px solid rgba(255,255,255,.1);
+}
+.stat-item:first-child { border-left: none; }
 .stat-number {
   display: block;
+  color: var(--cyan);
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 2.6rem; font-weight: 800;
   margin-bottom: .3rem;
 }
-.stat-label { font-size: .83rem; opacity: .9; line-height: 1.4; }
+.stat-label { font-size: .83rem; color: rgba(255,255,255,.55); line-height: 1.4; letter-spacing: .02em; text-transform: uppercase; font-weight: 500; }
 
 /* ========================================
    NOVEDAD – RC MOWER
@@ -779,4 +806,309 @@ a { text-decoration: none; color: inherit; }
   .gallery-item { min-width: 100%; }
   .hero-btns { flex-direction: column; }
   .equipo-cards-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ========================================
+   PORTFOLIO PAGE
+   ======================================== */
+
+.port-hero {
+  background: var(--dark);
+  padding: 120px 0 64px;
+}
+
+.port-hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .8rem;
+}
+
+.port-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  color: var(--cyan);
+  font-size: .9rem;
+  font-weight: 600;
+  transition: opacity .2s;
+}
+.port-back:hover { opacity: .75; }
+
+.port-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  color: #fff;
+  font-weight: 800;
+  margin-top: .4rem;
+}
+
+.port-hero p {
+  color: #99aabb;
+  font-size: 1.1rem;
+}
+
+.port-hero-line {
+  width: 56px;
+  height: 4px;
+  background: var(--cyan);
+  border-radius: 2px;
+  margin-top: .6rem;
+}
+
+/* Project list */
+.port-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Project card */
+.port-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 5rem 0;
+  border-bottom: 1px solid #eee;
+}
+.port-card:last-child { border-bottom: none; }
+
+.port-card.reverse { direction: rtl; }
+.port-card.reverse > * { direction: ltr; }
+
+/* Gallery */
+.port-main-img {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--light);
+}
+
+.port-main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+.port-main-img:hover img { transform: scale(1.04); }
+
+.port-thumbs {
+  display: flex;
+  gap: .6rem;
+  margin-top: .8rem;
+  flex-wrap: wrap;
+}
+
+.port-thumb {
+  width: 72px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: .55;
+  outline: 2px solid transparent;
+  transition: opacity .2s, outline-color .2s;
+}
+.port-thumb.active,
+.port-thumb:hover { opacity: 1; outline-color: var(--cyan); }
+
+/* Info */
+.port-tag {
+  display: inline-block;
+  background: var(--cyan);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: .28rem .9rem;
+  border-radius: 20px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: .9rem;
+}
+
+.port-info h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.port-info p {
+  color: var(--gray);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.port-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.port-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--gray);
+  font-size: .88rem;
+  font-weight: 500;
+}
+
+.port-meta svg { stroke: var(--cyan); flex-shrink: 0; }
+
+/* CTA */
+.port-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  padding: 3.5rem 0;
+  text-align: center;
+}
+
+.port-cta h2 {
+  color: #fff;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+}
+
+/* Portfolio responsive */
+@media (max-width: 900px) {
+  .port-card,
+  .port-card.reverse { grid-template-columns: 1fr; direction: ltr; gap: 2rem; }
+}
+
+/* ========================================
+   EN CONSTRUCCIÓN
+   ======================================== */
+.en-construccion { background: var(--light); }
+
+.en-construccion-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+  padding: 5rem 1rem;
+}
+
+.en-construccion-icon {
+  color: var(--cyan);
+  margin-bottom: .5rem;
+}
+
+.en-construccion-badge {
+  display: inline-block;
+  background: var(--cyan);
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 700;
+  padding: .28rem 1rem;
+  border-radius: 20px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.en-construccion h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--dark);
+}
+
+.en-construccion p {
+  color: var(--gray);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 520px;
+}
+
+.en-construccion-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: .8rem;
+}
+
+.btn-outline-dark {
+  display: inline-block;
+  padding: .7rem 1.6rem;
+  border-radius: 30px;
+  border: 2px solid var(--dark);
+  color: var(--dark);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: .9rem;
+  transition: all .25s;
+}
+.btn-outline-dark:hover { background: var(--dark); color: #fff; }
+
+/* ========================================
+   UNIDADES – logo switcher
+   ======================================== */
+.unidad-logo-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  min-height: 260px;
+}
+
+.unidad-logo-display img {
+  max-height: 160px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: opacity .2s ease;
+}
+
+.unidad-item { cursor: pointer; }
+
+/* ========================================
+   INNOVA UNIT CARDS (servicios.html)
+   ======================================== */
+.innova-units-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.innova-unit-card {
+  background: var(--dark);
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  transition: transform .25s;
+}
+
+.innova-unit-card:hover { transform: translateY(-4px); }
+
+.innova-unit-card img {
+  max-height: 110px;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+.innova-unit-card h3 {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.innova-unit-card p {
+  color: rgba(255,255,255,.65);
+  font-size: .88rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 750px) {
+  .innova-units-grid { grid-template-columns: 1fr; }
 }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyectos – Grupo Innova</title>
+  <link rel="icon" type="image/png" href="IMG_5646.PNG" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="IMG_5646.PNG" alt="Grupo Innova" class="logo-img" />
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Inicio</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="portfolio.html">Proyectos</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <div class="nav-right">
+      <a href="https://www.facebook.com/GRUPOINNOVASRL" target="_blank" rel="noopener" aria-label="Facebook" class="nav-insta">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/grupoinnova_sj/" target="_blank" rel="noopener" aria-label="Instagram" class="nav-insta">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="port-hero" style="background: linear-gradient(to right, rgba(0,0,0,.62) 0%, rgba(0,0,0,.35) 100%), url('proyectos/circunvalacion/IMG_4060.JPG') center/cover no-repeat;">
+  <div class="container port-hero-inner">
+    <a href="index.html" class="port-back">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      Volver al inicio
+    </a>
+    <h1>Proyectos</h1>
+    <p>Conocé los proyectos finalizados y certificados de Grupo Innova</p>
+    <div class="port-hero-line"></div>
+  </div>
+</section>
+
+<!-- ===================== EN CONSTRUCCIÓN ===================== -->
+<section class="en-construccion section">
+  <div class="container en-construccion-inner">
+    <div class="en-construccion-icon">
+      <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+      </svg>
+    </div>
+    <span class="en-construccion-badge">Próximamente</span>
+    <h2>Sección en construcción</h2>
+    <p>Estamos preparando el portfolio de proyectos de Grupo Innova.<br />Muy pronto vas a poder ver todos nuestros trabajos finalizados y certificados.</p>
+    <div class="en-construccion-btns">
+      <a href="index.html" class="btn btn-primary">Volver al inicio</a>
+      <a href="contacto.html" class="btn btn-outline-dark">Contactanos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <span>+54 9 2645 79-9789</span>
+    <span>contacto@grupoinnova.com.ar</span>
+    <span>© 2024 Grupo Innova. Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function portSetMain(imgId, thumb) {
+  document.getElementById(imgId).src = thumb.src;
+  thumb.closest('.port-thumbs').querySelectorAll('.port-thumb').forEach(function(t) {
+    t.classList.remove('active');
+  });
+  thumb.classList.add('active');
+}
+</script>
+</body>
+</html>

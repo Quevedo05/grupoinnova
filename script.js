@@ -58,6 +58,41 @@ function goEquipo(idx) {
 
 setInterval(() => goEquipo(equipoIdx + 1), 4000);
 
+// ---- Hero unit switcher ----
+function setHeroUnit(btn, logoSrc, alt) {
+  const img = document.getElementById('heroUnitLogoImg');
+  if (img) {
+    img.style.opacity = '0';
+    setTimeout(() => { img.src = logoSrc; img.alt = alt; img.style.opacity = '1'; }, 180);
+  }
+  const navLogo = document.querySelector('.nav-logo .logo-img');
+  if (navLogo) {
+    navLogo.style.transition = 'opacity .2s ease';
+    navLogo.style.opacity = '0';
+    setTimeout(() => { navLogo.src = logoSrc; navLogo.style.opacity = '1'; }, 180);
+  }
+  document.querySelectorAll('.hero-btns .btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ---- Unidades logo switcher ----
+function setUnidad(el, logoSrc) {
+  const logo = document.getElementById('unidadLogo');
+  if (!logo) return;
+  logo.style.opacity = '0';
+  setTimeout(() => { logo.src = logoSrc; logo.style.opacity = '1'; }, 200);
+
+  const navLogo = document.querySelector('.nav-logo .logo-img');
+  if (navLogo) {
+    navLogo.style.transition = 'opacity .2s ease';
+    navLogo.style.opacity = '0';
+    setTimeout(() => { navLogo.src = logoSrc; navLogo.style.opacity = '1'; }, 200);
+  }
+
+  document.querySelectorAll('.unidad-item').forEach(i => i.classList.remove('highlight'));
+  el.classList.add('highlight');
+}
+
 // ---- RC Mower gallery ----
 function rcSetMain(thumb) {
   document.getElementById('rcMainImg').src = thumb.src;
