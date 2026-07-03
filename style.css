@@ -778,6 +778,15 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ========================================
+   AOS FAILSAFE – si el JS no carga, los elementos siguen visibles
+   ======================================== */
+[data-aos]:not(.aos-init) {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* ========================================
    RESPONSIVE
    ======================================== */
 @media (max-width: 900px) {

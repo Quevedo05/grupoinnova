@@ -122,13 +122,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ---- AOS init ----
-if (typeof AOS !== 'undefined') {
-  AOS.init({
-    duration: 650,
-    once: true,
-    easing: 'ease-out-cubic',
-    offset: 50,
-  });
+function initAOS() {
+  if (typeof AOS !== 'undefined') {
+    AOS.init({ duration: 650, once: true, easing: 'ease-out-quad', offset: 40 });
+  }
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAOS);
+} else {
+  initAOS();
 }
 
 // ---- CountUp for stats ----
