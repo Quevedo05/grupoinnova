@@ -9,21 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
 <body>
-
-<!-- MODO MANTENIMIENTO (solo en produccion, no en localhost) -->
-<div id="maintenance" style="position:fixed;inset:0;z-index:99999;background:#222831;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;font-family:'Inter',sans-serif;">
-  <img src="IMG_5646.PNG" alt="Grupo Innova" style="height:80px;object-fit:contain;" />
-  <h1 style="color:#fff;font-size:1.8rem;margin:0;font-weight:700;">Sitio en mantenimiento</h1>
-  <p style="color:#aaa;font-size:1rem;margin:0;text-align:center;max-width:400px;">Estamos realizando mejoras. Volvemos en unos minutos.</p>
-  <div style="width:48px;height:4px;background:#00BCD4;border-radius:2px;"></div>
-</div>
-<script>
-  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:') {
-    document.getElementById('maintenance').remove();
-  }
-</script>
 
 <!-- ===================== NAVBAR ===================== -->
 <header class="navbar" id="navbar">
@@ -91,21 +79,21 @@
 <!-- ===================== CARDS INTRO ===================== -->
 <section class="cards-intro section">
   <div class="container cards-grid">
-    <div class="card-intro">
+    <div class="card-intro" data-aos="fade-up" data-aos-delay="0">
       <div class="card-icon">
         <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
       <h3>Sobre Innova</h3>
       <p>Somos el grupo en el cual encontrarás un equipo altamente comprometido en el mantenimiento y cuidado de tus espacios verdes.</p>
     </div>
-    <div class="card-intro featured">
+    <div class="card-intro featured" data-aos="fade-up" data-aos-delay="150">
       <div class="card-icon">
         <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
       </div>
       <h3>Nuestros Servicios</h3>
       <p>Ofrecemos servicios integrales y especializados de mantenimiento, poda, siembra y atención para todos los espacios verdes.</p>
     </div>
-    <div class="card-intro">
+    <div class="card-intro" data-aos="fade-up" data-aos-delay="300">
       <div class="card-icon">
         <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
       </div>
@@ -118,12 +106,12 @@
 <!-- ===================== EN GRUPO INNOVA ===================== -->
 <section class="en-innova section" id="nosotros">
   <div class="container en-innova-inner">
-    <div class="en-innova-text">
+    <div class="en-innova-text" data-aos="fade-right">
       <h2 class="section-tag-title"><span class="tag-accent">En Grupo Innova</span></h2>
       <p>A partir de la incorporación de las más recientes tecnologías en el mantenimiento de espacios verdes, brindamos a nuestros clientes la calidad natural que sus proyectos merecen. Trabajamos con compromiso, eficiencia y la más alta profesionalidad en cada uno de nuestros compromisos.</p>
       <a href="#servicios" class="btn btn-primary" style="margin-top:1.2rem">Conocé nuestros servicios</a>
     </div>
-    <div class="en-innova-img">
+    <div class="en-innova-img" data-aos="fade-left">
       <img src="foto4.png" alt="Grupo Innova equipo" />
     </div>
   </div>
@@ -133,10 +121,10 @@
 <section class="proyectos section" id="proyectos">
   <div class="container">
     <div class="section-header">
-      <h2>Proyectos finalizados y certificados</h2>
-      <div class="section-line"></div>
+      <h2 data-aos="fade-up">Proyectos finalizados y certificados</h2>
+      <div class="section-line" data-aos="fade-up" data-aos-delay="100"></div>
     </div>
-    <div class="gallery-slider" id="gallerySlider">
+    <div class="gallery-slider" id="gallerySlider" data-aos="fade-up" data-aos-delay="150">
       <div class="gallery-track" id="galleryTrack">
         <div class="gallery-item">
           <img src="foto1.png" alt="Circunvalación" />
@@ -172,37 +160,37 @@
 <section class="servicios section" id="servicios">
   <div class="container">
     <div class="section-header">
-      <h2>Servicios</h2>
-      <p>Nos especializamos en todo lo que tu espacio verde necesita</p>
-      <div class="section-line"></div>
+      <h2 data-aos="fade-up">Servicios</h2>
+      <p data-aos="fade-up" data-aos-delay="80">Nos especializamos en todo lo que tu espacio verde necesita</p>
+      <div class="section-line" data-aos="fade-up" data-aos-delay="160"></div>
     </div>
     <div class="servicios-layout">
-      <div class="servicios-left">
+      <div class="servicios-left" data-aos="fade-right">
         <h3 class="servicios-tagline">Soluciones<br /><span>integrales y<br />especializadas</span></h3>
         <p>Trabajamos para el sector privado, Gobierno Municipal y provincial, logrando estándares internacionales de productividad y calidad.</p>
       </div>
       <div class="servicios-grid">
-        <div class="servicio-item">
+        <div class="servicio-item" data-aos="fade-up" data-aos-delay="0">
           <div class="servicio-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M5 3a7 7 0 0 0 7 7"/><path d="M19 3a7 7 0 0 1-7 7"/><path d="M3 11c0 2.8 2.2 5 5 5h8c2.8 0 5-2.2 5-5"/></svg></div>
           <h4>Mantenimiento y limpieza de espacios verdes</h4>
         </div>
-        <div class="servicio-item">
+        <div class="servicio-item" data-aos="fade-up" data-aos-delay="100">
           <div class="servicio-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6"/><path d="M5.2 8.2 2 12l3.2 3.8"/><path d="M18.8 8.2 22 12l-3.2 3.8"/><path d="M5.2 15.8 12 22l6.8-6.2"/><circle cx="12" cy="12" r="3"/></svg></div>
           <h4>Instalación y mantenimiento de sistemas de riego</h4>
         </div>
-        <div class="servicio-item">
+        <div class="servicio-item" data-aos="fade-up" data-aos-delay="200">
           <div class="servicio-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
           <h4>Mantenimiento edilicio</h4>
         </div>
-        <div class="servicio-item">
+        <div class="servicio-item" data-aos="fade-up" data-aos-delay="0">
           <div class="servicio-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
           <h4>Construcción, refacción y mantenimiento de obras civiles</h4>
         </div>
-        <div class="servicio-item">
+        <div class="servicio-item" data-aos="fade-up" data-aos-delay="100">
           <div class="servicio-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
           <h4>Mejora y mantenimiento de Campos Deportivos</h4>
         </div>
-        <div class="servicio-item">
+        <div class="servicio-item" data-aos="fade-up" data-aos-delay="200">
           <div class="servicio-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8C8 10 5.9 16.17 3.82 22"/><path d="M9.5 9.5C8 13 8.5 16 10 17.5"/><path d="M21 3C9 3 4 14.5 4 22"/></svg></div>
           <h4>Poda y tratamiento de árboles</h4>
         </div>
@@ -217,12 +205,12 @@
   <div class="container">
     <!-- Columnas de texto -->
     <div class="equipo-text-cols" style="margin-top:3rem">
-      <div class="equipo-col">
+      <div class="equipo-col" data-aos="fade-right">
         <div class="equipo-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h4>Nuestras bases</h4>
         <p>Contamos con un equipo altamente profesional, con conocimientos actualizados e infraestructura de primera para brindar el mejor servicio.</p>
       </div>
-      <div class="equipo-col">
+      <div class="equipo-col" data-aos="fade-left">
         <div class="equipo-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <h4>Somos profesionales</h4>
         <p>Nuestra pasión se ve reflejada en cada espacio que administramos, logrando estándares diferenciados y superando las expectativas de nuestros clientes.</p>
@@ -235,20 +223,20 @@
 <!-- ===================== STATS ===================== -->
 <section class="stats">
   <div class="container stats-grid">
-    <div class="stat-item">
-      <span class="stat-number">2014</span>
+    <div class="stat-item" data-aos="zoom-in" data-aos-delay="0">
+      <span class="stat-number" data-count="2014" data-from="2005">2014</span>
       <span class="stat-label">Nuestro inicio</span>
     </div>
-    <div class="stat-item">
-      <span class="stat-number">30+</span>
+    <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+      <span class="stat-number" data-count="30" data-suffix="+">30+</span>
       <span class="stat-label">Proyectos finalizados y certificados</span>
     </div>
-    <div class="stat-item">
-      <span class="stat-number">15</span>
+    <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+      <span class="stat-number" data-count="15">15</span>
       <span class="stat-label">Empresas locales que confían</span>
     </div>
-    <div class="stat-item">
-      <span class="stat-number">4+</span>
+    <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+      <span class="stat-number" data-count="4" data-suffix="+">4+</span>
       <span class="stat-label">Reputaciones óptimas de estado provincial</span>
     </div>
   </div>
@@ -259,7 +247,7 @@
   <div class="container">
     <div class="novedad-inner">
 
-      <div class="novedad-text">
+      <div class="novedad-text" data-aos="fade-right">
         <span class="novedad-badge">Novedad</span>
         <h2>Nueva incorporación:<br /><span class="novedad-title-accent">RC Mower TK-60XP</span></h2>
         <p>Grupo Innova suma a su flota la cortadora de césped teledirigida <strong>RC Mower TK-60XP</strong>, una máquina de última generación diseñada para trabajar en terrenos de difícil acceso, laderas pronunciadas y zonas de riesgo sin exponer al operario.</p>
@@ -284,7 +272,7 @@
         <a href="contacto.html" class="btn btn-primary" style="margin-top:1.4rem">Consultanos sobre este servicio</a>
       </div>
 
-      <div class="novedad-galeria">
+      <div class="novedad-galeria" data-aos="fade-left">
         <div class="novedad-principal">
           <img src="RC-Mowers-TK-60XP_58818570.h.jpg" alt="RC Mower TK-60XP" id="rcMainImg" />
         </div>
@@ -304,29 +292,29 @@
 <section class="unidades section">
   <div class="container">
     <div class="section-header">
-      <h2>Unidades de Negocio</h2>
-      <div class="section-line"></div>
+      <h2 data-aos="fade-up">Unidades de Negocio</h2>
+      <div class="section-line" data-aos="fade-up" data-aos-delay="100"></div>
     </div>
     <div class="unidades-grid">
-      <div class="unidad-logo-display">
+      <div class="unidad-logo-display" data-aos="zoom-in">
         <img src="logos/logos/espacios verdes.PNG" id="unidadLogo" alt="Innova Espacios Verdes" />
       </div>
       <div class="unidades-list">
-        <div class="unidad-item highlight" onclick="setUnidad(this, 'logos/logos/espacios verdes.PNG')">
+        <div class="unidad-item highlight" onclick="setUnidad(this, 'logos/logos/espacios verdes.PNG')" data-aos="fade-left" data-aos-delay="0">
           <span class="unidad-num">01</span>
           <div>
             <h4>Innova Espacios Verdes</h4>
             <p>Brindamos soluciones integrales de mantenimiento a todo tipo de empresa que lo necesite.</p>
           </div>
         </div>
-        <div class="unidad-item" onclick="setUnidad(this, 'logos/logos/construccion.PNG')">
+        <div class="unidad-item" onclick="setUnidad(this, 'logos/logos/construccion.PNG')" data-aos="fade-left" data-aos-delay="120">
           <span class="unidad-num">02</span>
           <div>
             <h4>Innova Construcción</h4>
             <p>Nos encargamos de la construcción y administración de obras civiles y proyectos edilicios.</p>
           </div>
         </div>
-        <div class="unidad-item" onclick="setUnidad(this, 'logos/logos/ingieneria.PNG')">
+        <div class="unidad-item" onclick="setUnidad(this, 'logos/logos/ingieneria.PNG')" data-aos="fade-left" data-aos-delay="240">
           <span class="unidad-num">03</span>
           <div>
             <h4>Innova Ingeniería</h4>
@@ -384,6 +372,7 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

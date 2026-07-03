@@ -121,25 +121,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ---- Reveal on scroll ----
-const observer = new IntersectionObserver((entries) => {
+// ---- AOS init ----
+if (typeof AOS !== 'undefined') {
+  AOS.init({
+    duration: 650,
+    once: true,
+    easing: 'ease-out-cubic',
+    offset: 50,
+  });
+}
+
+// ---- CountUp for stats ----
+function runCountUp(el) {
+  const target = parseInt(el.dataset.count, 10);
+  const from = parseInt(el.dataset.from || '0', 10);
+  const suffix = el.dataset.suffix || '';
+  const duration = 1600;
+  const start = performance.now();
+
+  function step(now) {
+    const t = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - t, 3);
+    el.textContent = Math.round(from + (target - from) * eased) + suffix;
+    if (t < 1) requestAnimationFrame(step);
+    else el.textContent = target + suffix;
+  }
+  requestAnimationFrame(step);
+}
+
+const countObs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      runCountUp(entry.target);
+      countObs.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.4 });
 
-document.querySelectorAll('.card-intro, .servicio-item, .stat-item, .unidad-item, .equipo-col').forEach(el => {
-  el.classList.add('reveal');
-  observer.observe(el);
-});
-
-// Add reveal styles dynamically
-const style = document.createElement('style');
-style.textContent = `
-  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .5s ease, transform .5s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
-`;
-document.head.appendChild(style);
+document.querySelectorAll('.stat-number[data-count]').forEach(el => countObs.observe(el));
