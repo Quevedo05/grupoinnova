@@ -69,6 +69,7 @@ equipoCards.forEach((_, i) => {
 });
 
 function goEquipo(idx) {
+  if (!equipoCards.length) return;
   equipoCards[equipoIdx].classList.remove('active');
   equipoDots?.children[equipoIdx].classList.remove('active');
   equipoIdx = (idx + equipoCards.length) % equipoCards.length;
