@@ -2,6 +2,21 @@
    Grupo Innova – JS
    ======================================== */
 
+// ---- Page Loader ----
+(function () {
+  var loader = document.getElementById('page-loader');
+  if (!loader) return;
+  function hide() {
+    loader.classList.add('hidden');
+    loader.addEventListener('transitionend', function () { loader.remove(); }, { once: true });
+  }
+  var img = new Image();
+  img.onload = hide;
+  img.onerror = hide;
+  img.src = 'proyectos/circunvalacion/IMG_4063.JPG';
+  setTimeout(hide, 6000);
+})();
+
 // Navbar scroll shadow
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
