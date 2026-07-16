@@ -2,25 +2,6 @@
    Grupo Innova – JS
    ======================================== */
 
-// ---- Page Loader ----
-(function () {
-  const loader = document.getElementById('page-loader');
-  if (!loader) return;
-
-  function hideLoader() {
-    loader.classList.add('hidden');
-    loader.addEventListener('transitionend', () => loader.remove(), { once: true });
-  }
-
-  const heroImg = new Image();
-  heroImg.onload = hideLoader;
-  heroImg.onerror = hideLoader;
-  heroImg.src = 'proyectos/circunvalacion/IMG_4063.JPG';
-
-  // Fallback por si la imagen tarda demasiado
-  setTimeout(hideLoader, 6000);
-})();
-
 // Navbar scroll shadow
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
