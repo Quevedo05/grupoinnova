@@ -6,15 +6,20 @@
 (function () {
   var loader = document.getElementById('page-loader');
   if (!loader) return;
+  var done = false;
   function hide() {
+    if (done) return;
+    done = true;
     loader.classList.add('hidden');
-    loader.addEventListener('transitionend', function () { loader.remove(); }, { once: true });
+    setTimeout(function () { if (loader.parentNode) loader.remove(); }, 600);
   }
   var img = new Image();
   img.onload = hide;
   img.onerror = hide;
   img.src = 'proyectos/circunvalacion/IMG_4063.JPG';
-  setTimeout(hide, 6000);
+  if (img.complete) hide();
+  window.addEventListener('load', hide);
+  setTimeout(hide, 5000);
 })();
 
 // Navbar scroll shadow
